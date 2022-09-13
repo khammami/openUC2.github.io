@@ -4,12 +4,12 @@
   "prefix": "https://storage.googleapis.com",
   "mainga": "UA-49880327-14",
   "updated": "2022-09-13T20:58:39Z",
-  "id": "uc2-tutorial-minibox",
+  "id": "uc2-tutorial-minibox-eng",
   "duration": 86,
-  "title": "UC2 Anleitung für die miniBOX",
+  "title": "UC2 instructions for the miniBOX",
   "authors": "Benedict",
-  "summary": "UC2 Anleitung für die miniBOX",
-  "source": "markdowns/UC2_Tutorial_1.md",
+  "summary": "UC2 instructions for the miniBOX",
+  "source": "markdowns/UC2_Tutorial_English.md",
   "theme": "",
   "status": [
     "published"
@@ -18,8 +18,8 @@
     "minibox"
   ],
   "tags": [
-    "minibox"
+    "mini box"
   ],
   "feedback": "https://youseetoo.org",
-  "url": "uc2-tutorial-minibox"
+  "url": "uc2-tutorial-minibox-eng"
 }
