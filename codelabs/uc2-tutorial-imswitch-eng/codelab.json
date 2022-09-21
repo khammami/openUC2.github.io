@@ -4,22 +4,22 @@
   "prefix": "https://storage.googleapis.com",
   "mainga": "UA-49880327-14",
   "updated": "2022-09-21T19:08:00Z",
-  "id": "uc2-tutorial-minibox",
-  "duration": 86,
-  "title": "UC2 Anleitung für die miniBOX",
+  "id": "uc2-tutorial-imswitch-eng",
+  "duration": 9,
+  "title": "ImSwitch for UC2 Installation Guide",
   "authors": "Benedict",
-  "summary": "UC2 Anleitung für die miniBOX",
-  "source": "markdowns/UC2_Tutorial_1.md",
+  "summary": "A guide to install the UC2 ImSwitch Software",
+  "source": "markdowns/UC2_ImSwitch_English.md",
   "theme": "",
   "status": [
     "published"
   ],
   "category": [
-    "minibox"
+    "imswitch"
   ],
   "tags": [
-    "minibox"
+    "imswitch"
   ],
   "feedback": "https://youseetoo.org",
-  "url": "uc2-tutorial-minibox"
+  "url": "uc2-tutorial-imswitch-eng"
 }
