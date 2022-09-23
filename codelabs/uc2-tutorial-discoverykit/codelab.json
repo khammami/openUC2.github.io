@@ -1,0 +1,27 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2022-09-23T06:53:22Z",
+  "id": "uc2-tutorial-discoverykit",
+  "duration": 1,
+  "title": "An Introduction into the openUC2 Discovery Kit",
+  "authors": "Benedict",
+  "summary": "An introduction to work with the Discovery Kit Base",
+  "source": "markdowns/UC2_DiscoverKit_Base_English.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "discovery kit"
+  ],
+  "tags": [
+    "discovery kit",
+    "microscopy",
+    "optics"
+  ],
+  "feedback": "https://youseetoo.org",
+  "url": "uc2-tutorial-discoverykit"
+}
