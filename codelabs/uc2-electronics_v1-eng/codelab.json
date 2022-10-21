@@ -3,7 +3,7 @@
   "format": "html",
   "prefix": "https://storage.googleapis.com",
   "mainga": "UA-49880327-14",
-  "updated": "2022-10-21T21:46:30Z",
+  "updated": "2022-10-21T21:47:16Z",
   "id": "uc2-electronics_v1-eng",
   "duration": 63,
   "title": "UC2e - A guide to use the UC2 Electronics",
@@ -22,6 +22,6 @@
     "electronics",
     "uc2e"
   ],
-  "feedback": "https://youseetoo.org",
+  "feedback": "https://github.com/openUC2/UC2-REST/issues/new",
   "url": "uc2-electronics_v1-eng"
 }
