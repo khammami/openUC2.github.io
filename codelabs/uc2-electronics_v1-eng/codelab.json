@@ -4,22 +4,24 @@
   "prefix": "https://storage.googleapis.com",
   "mainga": "UA-49880327-14",
   "updated": "2022-10-21T21:22:10Z",
-  "id": "uc2-tutorial-minibox-eng",
-  "duration": 86,
-  "title": "UC2 instructions for the miniBOX",
+  "id": "uc2-electronics_v1-eng",
+  "duration": 5,
+  "title": "UC2e - A guide to use the UC2 Electronics",
   "authors": "Benedict",
-  "summary": "UC2 instructions for the miniBOX",
-  "source": "markdowns/UC2_Tutorial_English.md",
+  "summary": "A guide to get the UC2e electronics starting",
+  "source": "markdowns/UC2_UC2e_v1.md",
   "theme": "",
   "status": [
     "published"
   ],
   "category": [
-    "minibox"
+    "uc2e"
   ],
   "tags": [
-    "mini box"
+    "controller",
+    "electronics",
+    "uc2e"
   ],
   "feedback": "https://youseetoo.org",
-  "url": "uc2-tutorial-minibox-eng"
+  "url": "uc2-electronics_v1-eng"
 }
