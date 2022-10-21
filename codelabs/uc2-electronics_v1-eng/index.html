@@ -27,9 +27,45 @@
                   environment="web"
                   feedback-link="https://youseetoo.org">
     
-      <google-codelab-step label="🔌 Board layout and schematics" duration="0">
-        <p>The board comes with 4 motor controllers (e.g. A4988 Bipolar Stepper controler), the ESP32 Dev Kit, a bunch of pins for in/outgoing connections, 3 darlington transistors (BD809) and the power distribution. It is inspired by the CNC shield and can</p>
+      <google-codelab-step label="Overview" duration="1">
+        <p><strong>IMPORTANT</strong> The system is under constant development and may be subjject to changes. If you find any bug or something feels unclear, you can help us improving the system! Feel lucky and file your issue today by opening one here: <a href="https://github.com/openUC2/UC2-REST/issues/new" target="_blank">GitHub: UC2-REST</a></p>
+<h2 is-upgraded>What will you learn?</h2>
 <ul>
+<li>How to connect the UC2 electronics?</li>
+<li>How to wire up the board with external components</li>
+<li>How to get the playstation controller working?</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Introduction into the UC2e Board (&#34;Standalone&#34;)" duration="5">
+        <p>For a microscsope you have several I/Os that need to be controlled via Software. This majorly concerns:</p>
+<ul>
+<li>Lasers</li>
+<li>Motors (e.g. for positioning)</li>
+<li>LEDs for changing the crontrast (e.g. LED Array)</li>
+<li>Sensors (e.g. Endstops)</li>
+</ul>
+<p>There exist a number of boards that can do it by default. Here, we created our own driver electronics that is based on the Espressif ESP32 microcontroller unit (MCU) that has:</p>
+<ul>
+<li>4x Stepper outputs</li>
+<li>3x PWM outputs for e.g. Lasers</li>
+<li>1x Neopixel Slot (for the LED Ring Array)</li>
+<li>3x PWM amplified for e.g. power LEDs</li>
+<li>1x I2C connection</li>
+<li>USB Serial connection</li>
+<li>2x DAC (8Bit)</li>
+</ul>
+<p>It is based on common &#34;GRBL&#34; boards that drive 3D printers, CNC routers or alike.</p>
+<p>A fully assembled board with 12V power, the UC2 LED matrix and the linear stepper motor can be found below:</p>
+<p class="image-container"><img style="width: 400.00px" src="img/b5caabbc18cbb583.jpg"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="🔌 Board layout and schematics" duration="0">
+        <ul>
 <li>run up to 4 steppers</li>
 <li>run multiple high power LEDs</li>
 <li>be controlled via PS3/PS4 Controllers</li>
@@ -45,8 +81,12 @@
 <li>USB Serial (mostly used)</li>
 </ul>
 <p class="image-container"><img style="width: 600.00px" src="img/1bd8762f768661bd.png"></p>
-<h2 is-upgraded>⚡  Wiring</h2>
-<p>All connectors are coming with 2.54mm spaced male pins that can connect to JST connectors (e.g. Motors and LED Array). In case the casing is blocking it mechanically, you can remove the case. Make sure you do not</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="⚡ Wiring" duration="5">
+        <p>All connectors are coming with 2.54mm spaced male pins that can connect to JST connectors (e.g. Motors and LED Array). In case the casing is blocking it mechanically, you can remove the case. Make sure you do not</p>
 <p><br>The polarity of the LED Array matters! The UC2 LED ring module comes with a JST connector where the 3 pins represent (5V, Data, GND) **RED** / Black / Black. Make sure the Red cable is connected to the 5V on the PCB<br></p>
 <p>Below you can find a rendering of the PCB that is sitting inside the 3D printed Box with all its connectors.</p>
 <p class="image-container"><img style="width: 600.00px" src="img/8debc036ec7a1f79.png"></p>
@@ -57,8 +97,7 @@
       </google-codelab-step>
     
       <google-codelab-step label="UC2 LED Ring" duration="0">
-        <p>As for the illumination, you can use a large variation of different light sources to get your sample in the right light. But sometimes you want to have the abbility to change the contrast by illuminating from oblique, only in the center, using a darkfield ring or change degree of coherence. An off-the-shelf LED Matrix is very sufficient in most cases, but it lacks the rotational symmetry. For this we have the UC2 LED Ring Module that fits directly in the Cube, has concentric rings and still offers all the degrees of freedom the Adafruit Neopixel give you (e.g. RGB, white, patterns..).</p>
-<p class="image-container"><img style="width: 600.00px" src="img/59b719d32e8512f9.jpg"></p>
+        <p class="image-container"><img style="width: 600.00px" src="img/59b719d32e8512f9.jpg"></p>
 <p>The 3 wires that leave the satellite board deliver 5V, Data and GND and directly connect to the UC2e via the LED pin:</p>
 <p class="image-container"><img style="width: 600.00px" src="img/e847dde3e58e98db.jpg"></p>
 
@@ -66,20 +105,22 @@
       </google-codelab-step>
     
       <google-codelab-step label="Connect devices" duration="0">
-        <p>Here you learn how to connect the ESP32 to the Arduino IDE, connect external hardware components (e.g. LED matrix) and control the electronics using the USB-serial interface. This is an older version of the ESP32, but the mechanism stays the same 🙃</p>
-<p class="image-container"><img alt="https://youtu.be/v8Xx2iVbDck" src="img/6babc2d48fdc084.png"></p>
+        <iframe class="youtube-video" src="https://www.youtube.com/embed/v8Xx2iVbDck?rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="❌ Replacing parts" duration="0">
-        <p>It can happen that either the ESP32 Dev Kit or one of the motor driver fails due to ESD. You can find alternatives here:</p>
-<ul>
+        <ul>
 <li>A4988 Stepper driver (<a href="https://www.amazon.de/AZDelivery-A4988-Schrittmotor-Treiber-Modul-Parent/dp/B07ZQHN62Q" target="_blank">Amazon</a>)</li>
 <li>ESP32 Dev Kit (<a href="https://www.amazon.de/AZDelivery-Development-Compatible-Including-Successor/dp/B07Z83MF5W/ref=sr_1_2_sspa?crid=2VAY9L1U49HOM&keywords=ESP32+dev+kit&qid=1666383153&qu=eyJxc2MiOiI0LjAxIiwicXNhIjoiMy43NCIsInFzcCI6IjMuMzYifQ%3D%3D&s=industrial&sprefix=esp32+dev+kit%2Cindustrial%2C260&sr=1-2-spons&psc=1&smid=A1X7QLRQH87QA3" target="_blank">Amazon</a>)</li>
 </ul>
-<p>Introduction into the ESP32 microcontroller Firmwarwe</p>
-<p>The firmware that runs on the ESP32 is under constant development and subject to heavy changes! However, the core idea will remain the same and is inspired by the<br> &#34;REST-API&#34;, which deals with &#34;endpoints&#34; in the HTML world (e.g. &#34;<code>/home</code>&#34;&#34;). We implemented the follow functions:</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Introduction into the ESP32 microcontroller firmware" duration="0">
+        <p><code>/home</code>&#34;&#34;). We implemented the follow functions:</p>
 <ul>
 <li><code>/*_act</code>-&gt; this starts an action</li>
 <li><code>/*_get</code>-&gt; this will return parameters or states</li>
@@ -91,10 +132,6 @@
 <p>In general, to interact with a device (e.g. stage), one has to send a JSON document, which is similar to the REST-API in the Internet world. A simple example to rotate a motor would be:</p>
 <pre><code>{&#34;task&#34;: &#34;/motor_act&#34;, &#34;axis&#34;:1, &#34;speed&#34;:1000, &#34;position&#34;:1000, &#34;isabsolute&#34;:1, &#34;isblocking&#34;:1}
 </code></pre>
-<h3 is-upgraded>Source-code, Compiling and Binaries</h3>
-<p>The current version of the firmware can be found here: https://github.com/openUC2/UC2-REST/tree/master/ESP32</p>
-<p>Additional information on how to install and compile the board can be found in the <a href="https://github.com/openUC2/UC2-REST/master/README.md" target="_blank">README</a></p>
-<p>Precompiled binaries that can be installed through ImSwitch (more information coming soon) or the <code>esptool.py</code>can be found here https://github.com/openUC2/UC2-REST/tree/master/ESP32/build</p>
 
 
       </google-codelab-step>
@@ -103,20 +140,36 @@
         <p>The unified &#34;REST-API&#34; (inspired, not following full protocol), enables you to control the functionalities from multiple different clients (e.g. Python, Webrowser, Android Phone). The Core idea is to file post/get requests (serial/wifi) that send/receive JSON files that do &#34;something&#34;.</p>
 <p class="image-container"><img style="width: 600.00px" src="img/8208ec5fc6c25e84.png"></p>
 <p><strong>Installing the USB Serial Driver</strong> Install the CH340 USB Serial driver is explained in more detail here: <a href="https://learn.sparkfun.com/tutorials/how-to-install-ch340-drivers/all" target="_blank">Sparkfun</a></p>
-<h2 is-upgraded>🐍 Python Bindings</h2>
-<p>In order to interact with the electronics, we implemented a Python library called <code>UC2-REST</code>, available <a href="https://github.com/openUC2/UC2-REST/tree/master/uc2rest" target="_blank">here</a> that will help you to work with the device. The easiest way to install it would be:</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="🐍 Python Bindings" duration="0">
+        <p>In order to interact with the electronics, we implemented a Python library called <code>UC2-REST</code>, available <a href="https://github.com/openUC2/UC2-REST/tree/master/uc2rest" target="_blank">here</a> that will help you to work with the device. The easiest way to install it would be:</p>
 <pre><code>pip install uc2-rest
 </code></pre>
 <p>It will automatically detect your UC2e (if the driver is installed), connect and will offer you the basic functionalities such as moving the motor, etc.</p>
 <p class="image-container"><img style="width: 60.00px" src="img/cb450efcdf1a60f0.png"></p>
 <p>In order to give you a deep dive in what&#39;s possible, we provide a Jupyter Notebook that guides you through all the functionalities. You can find it <a href="https://github.com/openUC2/UC2-REST/blob/master/uc2rest/UC2_REST_Tutorial_v0.ipynb" target="_blank">here</a></p>
-<h2 is-upgraded>📲 Android APP</h2>
-<p>This is coming soon. You will be able to control the electronics using the Wifi connection of your Android phone.</p>
-<h2 is-upgraded>💻 Browser APP</h2>
-<p>If the ESP32 is offereing an access point or is connected to your wifi router, you can access the webserver running on the ESP32 using a browser. It offers limited control over the Endpoints by filing post and get requests.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="📲 Android APP" duration="0">
+        <p>This is coming soon. You will be able to control the electronics using the Wifi connection of your Android phone.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="💻 Browser APP" duration="0">
+        <p>If the ESP32 is offereing an access point or is connected to your wifi router, you can access the webserver running on the ESP32 using a browser. It offers limited control over the Endpoints by filing post and get requests.</p>
 <p>More information are coning soon!</p>
-<h2 is-upgraded>🎮 Playstation 3 or Playstation 4 Controller</h2>
-<p>With the open-source libraries PS3Controller and PS4Controller we are able to make use of the Bluetooth-able joysticks from your beloved game console.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="🎮 Playstation 3 or Playstation 4 Controller" duration="0">
+        <p>With the open-source libraries PS3Controller and PS4Controller we are able to make use of the Bluetooth-able joysticks from your beloved game console.</p>
 <p>When a PS4 controller is ‘paired&#39; to a PS4 console, it just means that it has stored the console&#39;s Bluetooth MAC address, which is the only device the controller will connect to. Usually, this pairing happens when you connect the controller to the PS4 console using a USB cable, and press the PS button. This initiates writing the console&#39;s MAC address to the controller.</p>
 <p>Therefore, if you want to connect your PS4 controller to the ESP32, you either need to figure out what the Bluetooth MAC address of your PS4 console is and set the ESP32&#39;s address to it, or change the MAC address stored in the PS4 controller.</p>
 <p>Whichever path you choose, you might want a tool to read and/or write the currently paired MAC address from the PS4 controller. You can try using <a href="https://github.com/user-none/sixaxispairer" target="_blank">sixaxispairer</a> for this purpose.</p>
@@ -127,9 +180,21 @@
     Serial.println(&#34;Ready.&#34;);
 }
 </code></pre>
-<h2 is-upgraded>Controlling using ImSwitch</h2>
-<p>Please have a look <a href="https://github.com/openUC2/ImSwitch" target="_blank">here</a> for more information about how to install ImSwitch and <a href="https://github.com/beniroquai/ImSwitchConfig" target="_blank">here</a> for the UC2-related setup files including the UC2-REST serial interface.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Controlling using ImSwitch" duration="0">
+        <p>Please have a look <a href="https://github.com/openUC2/ImSwitch" target="_blank">here</a> for more information about how to install ImSwitch and <a href="https://github.com/beniroquai/ImSwitchConfig" target="_blank">here</a> for the UC2-related setup files including the UC2-REST serial interface.</p>
 <p class="image-container"><img style="width: 600.00px" src="img/3cec5730b4e45aa0.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Source-code, Compiling and Binaries" duration="5">
+        <p>The current version of the firmware can be found here: https://github.com/openUC2/UC2-REST/tree/master/ESP32</p>
+<p>Additional information on how to install and compile the board can be found in the <a href="https://github.com/openUC2/UC2-REST/master/README.md" target="_blank">README</a></p>
+<p>Precompiled binaries that can be installed through ImSwitch (more information coming soon) or the <code>esptool.py</code>can be found here https://github.com/openUC2/UC2-REST/tree/master/ESP32/build</p>
 
 
       </google-codelab-step>
@@ -165,7 +230,7 @@
 </ol>
 <p>The system accepts different hardware configurations (pins, devices, etc.). All of this is defined in the <code>pindef_XXXX.h</code>. Please have a look in the UC2-REST repository for additional information: https://github.com/openUC2/UC2-REST</p>
 <h2 is-upgraded>VIDEO Tutorial: Steps to install the software</h2>
-<p class="image-container"><img alt="https://youtu.be/9doTdo5SW2E" src="img/aa23a3c1525b43fd.png"></p>
+<iframe class="youtube-video" src="https://www.youtube.com/embed/9doTdo5SW2E?rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
       </google-codelab-step>
