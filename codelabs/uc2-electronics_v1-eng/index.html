@@ -28,7 +28,9 @@
                   feedback-link="https://youseetoo.org">
     
       <google-codelab-step label="Overview" duration="1">
-        <p><strong>IMPORTANT</strong> The system is under constant development and may be subjject to changes. If you find any bug or something feels unclear, you can help us improving the system! Feel lucky and file your issue today by opening one here: <a href="https://github.com/openUC2/UC2-REST/issues/new" target="_blank">GitHub: UC2-REST</a></p>
+        <p><strong>YOU.SEE.TOO.</strong></p>
+<p class="image-container"><img style="width: 100.00px" src="img/36c68c10e23e7a1c.png"></p>
+<p><strong>IMPORTANT</strong> The system is under constant development and may be subjject to changes. If you find any bug or something feels unclear, you can help us improving the system! Feel lucky and file your issue today by opening one here: <a href="https://github.com/openUC2/UC2-REST/issues/new" target="_blank">GitHub: UC2-REST</a></p>
 <h2 is-upgraded>What will you learn?</h2>
 <ul>
 <li>How to connect the UC2 electronics?</li>
@@ -64,8 +66,9 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="🔌 Board layout and schematics" duration="0">
-        <ul>
+      <google-codelab-step label="🔌 Board layout and schematics" duration="5">
+        <p>The board comes with 4 motor controllers (e.g. A4988 Bipolar Stepper controler), the ESP32 Dev Kit, a bunch of pins for in/outgoing connections, 3 darlington transistors (BD809) and the power distribution. It is inspired by the CNC shield and can</p>
+<ul>
 <li>run up to 4 steppers</li>
 <li>run multiple high power LEDs</li>
 <li>be controlled via PS3/PS4 Controllers</li>
@@ -96,16 +99,18 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="UC2 LED Ring" duration="0">
-        <p class="image-container"><img style="width: 600.00px" src="img/59b719d32e8512f9.jpg"></p>
+      <google-codelab-step label="UC2 LED Ring" duration="2">
+        <p>As for the illumination, you can use a large variation of different light sources to get your sample in the right light. But sometimes you want to have the abbility to change the contrast by illuminating from oblique, only in the center, using a darkfield ring or change degree of coherence. An off-the-shelf LED Matrix is very sufficient in most cases, but it lacks the rotational symmetry. For this we have the UC2 LED Ring Module that fits directly in the Cube, has concentric rings and still offers all the degrees of freedom the Adafruit Neopixel give you (e.g. RGB, white, patterns..).</p>
+<p class="image-container"><img style="width: 600.00px" src="img/59b719d32e8512f9.jpg"></p>
 <p>The 3 wires that leave the satellite board deliver 5V, Data and GND and directly connect to the UC2e via the LED pin:</p>
 <p class="image-container"><img style="width: 600.00px" src="img/e847dde3e58e98db.jpg"></p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Connect devices" duration="0">
-        <iframe class="youtube-video" src="https://www.youtube.com/embed/v8Xx2iVbDck?rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <google-codelab-step label="Connect devices" duration="5">
+        <p>Here you learn how to connect the ESP32 to the Arduino IDE, connect external hardware components (e.g. LED matrix) and control the electronics using the USB-serial interface. This is an older version of the ESP32, but the mechanism stays the same 🙃</p>
+<iframe class="youtube-video" src="https://www.youtube.com/embed/v8Xx2iVbDck?rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
       </google-codelab-step>
@@ -144,7 +149,7 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="🐍 Python Bindings" duration="0">
+      <google-codelab-step label="🐍 Python Bindings" duration="5">
         <p>In order to interact with the electronics, we implemented a Python library called <code>UC2-REST</code>, available <a href="https://github.com/openUC2/UC2-REST/tree/master/uc2rest" target="_blank">here</a> that will help you to work with the device. The easiest way to install it would be:</p>
 <pre><code>pip install uc2-rest
 </code></pre>
@@ -155,20 +160,20 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="📲 Android APP" duration="0">
+      <google-codelab-step label="📲 Android APP" duration="5">
         <p>This is coming soon. You will be able to control the electronics using the Wifi connection of your Android phone.</p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="💻 Browser APP" duration="0">
+      <google-codelab-step label="💻 Browser APP" duration="5">
         <p>If the ESP32 is offereing an access point or is connected to your wifi router, you can access the webserver running on the ESP32 using a browser. It offers limited control over the Endpoints by filing post and get requests.</p>
 <p>More information are coning soon!</p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="🎮 Playstation 3 or Playstation 4 Controller" duration="0">
+      <google-codelab-step label="🎮 Playstation 3 or Playstation 4 Controller" duration="5">
         <p>With the open-source libraries PS3Controller and PS4Controller we are able to make use of the Bluetooth-able joysticks from your beloved game console.</p>
 <p>When a PS4 controller is ‘paired&#39; to a PS4 console, it just means that it has stored the console&#39;s Bluetooth MAC address, which is the only device the controller will connect to. Usually, this pairing happens when you connect the controller to the PS4 console using a USB cable, and press the PS button. This initiates writing the console&#39;s MAC address to the controller.</p>
 <p>Therefore, if you want to connect your PS4 controller to the ESP32, you either need to figure out what the Bluetooth MAC address of your PS4 console is and set the ESP32&#39;s address to it, or change the MAC address stored in the PS4 controller.</p>
@@ -184,7 +189,7 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="Controlling using ImSwitch" duration="0">
+      <google-codelab-step label="Controlling using ImSwitch" duration="5">
         <p>Please have a look <a href="https://github.com/openUC2/ImSwitch" target="_blank">here</a> for more information about how to install ImSwitch and <a href="https://github.com/beniroquai/ImSwitchConfig" target="_blank">here</a> for the UC2-related setup files including the UC2-REST serial interface.</p>
 <p class="image-container"><img style="width: 600.00px" src="img/3cec5730b4e45aa0.png"></p>
 
@@ -199,7 +204,7 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="Install necessary software for UC2 rest (flash and interact)" duration="0">
+      <google-codelab-step label="Install necessary software for UC2 rest (flash and interact)" duration="5">
         <p>Here you learn how to install the necessary software (Arduino IDE, drivers, ESP-IDF, ARduino libraries) that are necessary for the system to be working. Everything is explained in the video below.</p>
 <p>Additional information about the UC2 electronics and UC2-REST are provided here: https://github.com/openUC2/UC2-REST</p>
 <h2 is-upgraded>Download and install the software:</h2>
