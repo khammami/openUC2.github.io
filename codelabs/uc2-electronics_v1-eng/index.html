@@ -30,7 +30,7 @@
       <google-codelab-step label="Overview" duration="1">
         <p><strong>YOU.SEE.TOO.</strong></p>
 <p class="image-container"><img style="width: 100.00px" src="img/36c68c10e23e7a1c.png"></p>
-<p><strong>IMPORTANT</strong> The system is under constant development and may be subjject to changes. If you find any bug or something feels unclear, you can help us improving the system! Feel lucky and file your issue today by opening one here: <a href="https://github.com/openUC2/UC2-REST/issues/new" target="_blank">GitHub: UC2-REST</a></p>
+<p><strong>IMPORTANT</strong> The system is under constant development and may be subject to changes. If you find any bug or something feels unclear, you can help us improving the system! Feel lucky and file your issue today by opening one here: <a href="https://github.com/openUC2/UC2-REST/issues/new" target="_blank">GitHub: UC2-REST</a></p>
 <h2 is-upgraded>What will you learn?</h2>
 <ul>
 <li>How to connect the UC2 electronics?</li>
@@ -46,7 +46,7 @@
 <ul>
 <li>Lasers</li>
 <li>Motors (e.g. for positioning)</li>
-<li>LEDs for changing the crontrast (e.g. LED Array)</li>
+<li>LEDs for changing the contrast (e.g. LED Array)</li>
 <li>Sensors (e.g. Endstops)</li>
 </ul>
 <p>There exist a number of boards that can do it by default. Here, we created our own driver electronics that is based on the Espressif ESP32 microcontroller unit (MCU) that has:</p>
@@ -67,13 +67,13 @@
       </google-codelab-step>
     
       <google-codelab-step label="🔌 Board layout and schematics" duration="5">
-        <p>The board comes with 4 motor controllers (e.g. A4988 Bipolar Stepper controler), the ESP32 Dev Kit, a bunch of pins for in/outgoing connections, 3 darlington transistors (BD809) and the power distribution. It is inspired by the CNC shield and can</p>
+        <p>The board comes with 4 motor controllers (e.g. A4988 Bipolar Stepper controller), the ESP32 Dev Kit, a bunch of pins for in/outgoing connections, 3 darlington transistors (BD809) and the power distribution. It is inspired by the CNC shield and can</p>
 <ul>
 <li>run up to 4 steppers</li>
 <li>run multiple high power LEDs</li>
 <li>be controlled via PS3/PS4 Controllers</li>
 <li>drive Adafruits Neopixels</li>
-<li>Trigger a Camera</li>
+<li>trigger a Camera</li>
 <li>provide scanning patterns for Galvos</li>
 <li>control/readout external devices using I2C</li>
 </ul>
@@ -90,7 +90,7 @@
     
       <google-codelab-step label="⚡ Wiring" duration="5">
         <p>All connectors are coming with 2.54mm spaced male pins that can connect to JST connectors (e.g. Motors and LED Array). In case the casing is blocking it mechanically, you can remove the case. Make sure you do not</p>
-<p><br>The polarity of the LED Array matters! The UC2 LED ring module comes with a JST connector where the 3 pins represent (5V, Data, GND) **RED** / Black / Black. Make sure the Red cable is connected to the 5V on the PCB<br></p>
+<p><br>The polarity of the LED Array matters! The UC2 LED ring module comes with a JST connector where the 3 pins represent (5V, Data, GND) **RED** / Black / Black. Make sure the RED cable is connected to the 5V on the PCB.<br></p>
 <p>Below you can find a rendering of the PCB that is sitting inside the 3D printed Box with all its connectors.</p>
 <p class="image-container"><img style="width: 600.00px" src="img/8debc036ec7a1f79.png"></p>
 <p>For those who are keen to understand the wiring, please click on the schematics below. The sources of the board will be published soon.</p>
@@ -99,8 +99,8 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="UC2 LED Ring" duration="2">
-        <p>As for the illumination, you can use a large variation of different light sources to get your sample in the right light. But sometimes you want to have the abbility to change the contrast by illuminating from oblique, only in the center, using a darkfield ring or change degree of coherence. An off-the-shelf LED Matrix is very sufficient in most cases, but it lacks the rotational symmetry. For this we have the UC2 LED Ring Module that fits directly in the Cube, has concentric rings and still offers all the degrees of freedom the Adafruit Neopixel give you (e.g. RGB, white, patterns..).</p>
+      <google-codelab-step label="💡 UC2 LED Ring" duration="2">
+        <p>As for the illumination, you can use a large variation of different light sources to get your sample in the right light. But sometimes you want to have the ability to change the contrast by illuminating from oblique, only in the center, using a darkfield ring or change degree of coherence. An off-the-shelf LED Matrix is very sufficient in most cases, but it lacks the rotational symmetry. For this we have the UC2 LED Ring Module that fits directly in the Cube, has concentric rings and still offers all the degrees of freedom that the Adafruit Neopixel gives you (e.g. RGB, white, patterns..).</p>
 <p class="image-container"><img style="width: 600.00px" src="img/59b719d32e8512f9.jpg"></p>
 <p>The 3 wires that leave the satellite board deliver 5V, Data and GND and directly connect to the UC2e via the LED pin:</p>
 <p class="image-container"><img style="width: 600.00px" src="img/e847dde3e58e98db.jpg"></p>
@@ -110,7 +110,7 @@
     
       <google-codelab-step label="First Steps, Getting Started, Flashing - Simply Quick Start!" duration="2">
         <h2 is-upgraded>Installing the driver</h2>
-<p><strong>Prerequirements:</strong> We make use of the Esspresif ESP32 MCU, which comes with the CH340 USB-UART interface. For this you need to install the appropriate driver.</p>
+<p><strong>Prerequirements:</strong> We make use of the Espressif ESP32 MCU, which comes with the CH340 USB-UART interface. For this you need to install the appropriate driver.</p>
 <p><strong>Installing the USB Serial Driver</strong> Install the CH340 USB Serial driver is explained in more detail here: <a href="https://learn.sparkfun.com/tutorials/how-to-install-ch340-drivers/all" target="_blank">Sparkfun</a></p>
 <h2 is-upgraded>Flashing latest version of the Firmware</h2>
 <p>We have multiple ways to flash the firmware, which we will describe briefly:</p>
@@ -265,7 +265,7 @@ void loop() {
     
       <google-codelab-step label="💻 Browser APP" duration="5">
         <p>If the ESP32 is offereing an access point or is connected to your wifi router, you can access the webserver running on the ESP32 using a browser. It offers limited control over the Endpoints by filing post and get requests.</p>
-<p>More information are coning soon!</p>
+<p>More information are coming soon!</p>
 
 
       </google-codelab-step>
